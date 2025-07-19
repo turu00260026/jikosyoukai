@@ -284,11 +284,20 @@
                 gap: 1rem;
             }
 
+            .logo {
+                font-size: 1rem;
+                line-height: 1.2;
+            }
+
             nav ul {
                 flex-wrap: wrap;
                 gap: 1rem;
             }
 
+            .hero-banner {
+                width: calc(100% - 2rem);
+                margin: 0 1rem;
+            }
 
             .section-title {
                 font-size: 2rem;
@@ -297,6 +306,11 @@
             .about-content {
                 flex-direction: column;
                 text-align: center;
+            }
+
+            .about {
+                margin: 2rem 1rem;
+                padding: 3rem 1.5rem;
             }
 
             .profile-image {
@@ -315,9 +329,22 @@
         }
 
         @media (max-width: 480px) {
+            .logo {
+                font-size: 0.9rem;
+            }
+
+            .hero-banner {
+                width: calc(100% - 1rem);
+                margin: 0 0.5rem;
+            }
 
             .section-title {
                 font-size: 1.5rem;
+            }
+
+            .about {
+                margin: 1rem 0.5rem;
+                padding: 2rem 1rem;
             }
 
             .profile-image {
