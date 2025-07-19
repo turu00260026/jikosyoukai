@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ネガティブな自分を積極的に肯定して生きる</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro", "Meiryo", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #559eff;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #2682fc;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            font-family: "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro", "Meiryo", sans-serif;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #ef5587;
+        }
+
+        /* メインコンテンツ */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .about .section-title {
+            color: #2682fc;
+            text-shadow: none;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ef5587, #f6fa55);
+            border-radius: 2px;
+        }
+
+        /* TOPセクション */
+        .hero {
+            background-color: #559eff;
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero-banner {
+            max-width: 1200px;
+            width: calc(100% - 4rem);
+            height: auto;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* ABOUTセクション */
+        .about {
+            background-color: white;
+            border-radius: 20px;
+            margin: 2rem auto;
+            padding: 4rem 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 1200px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 2rem;
+        }
+
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2682fc;
+            box-shadow: 0 10px 30px rgba(38, 130, 252, 0.3);
+        }
+
+        .profile-info h3 {
+            font-size: 2rem;
+            color: #2682fc;
+            margin-bottom: 1rem;
+        }
+
+        .profile-info .title {
+            font-size: 1.2rem;
+            color: #ef5587;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .profile-info p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #ef5587;
+            font-weight: bold;
+        }
+
+        /* WORKSセクション */
+        .works {
+            background-color: #559eff;
+        }
+
+        .works-category {
+            margin-bottom: 4rem;
+        }
+
+        .works-category h3 {
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .work-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .work-item h4 {
+            font-size: 1.1rem;
+            color: #2682fc;
+            margin-bottom: 1rem;
+        }
+
+        .work-item a {
+            color: #ef5587;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .work-item a:hover {
+            color: #2682fc;
+        }
+
+        /* CONTACTセクション */
+        .contact {
+            background: linear-gradient(135deg, #2682fc 0%, #ef5587 100%);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background: white;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact a {
+            color: #f6fa55;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: white;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav ul {
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* スムーススクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* アニメーション */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .work-item {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#top" class="logo">ネガティブな自分を積極的に肯定して生きる</a>
+            <nav>
+                <ul>
+                    <li><a href="#top">TOP</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#works">WORKS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="top" class="hero">
+            <img src="images/banner.png" alt="メインバナー" class="hero-banner">
+        </section>
+
+        <section id="about" class="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <img src="images/jibun.png" alt="つるの写真" class="profile-image">
+                <div class="profile-info">
+                    <h3>つる</h3>
+                    <p class="title">AIで遊ぶちょっとひねくれもの</p>
+                    <p>こんにちは、つるです。</p>
+                    <p>「書くのも描くのも苦手だし、なにが得意ってわけでもないけど──<br>
+                    AIでちょっと遊んでみたら、なんか…作れちゃった。」</p>
+                    <p>そんな"できちゃった感"からはじまった私の表現活動。</p>
+                    <p>生成AIでおもしろいと思えるものを気ままに作って、<br>
+                    気がつけばその作り方までUdemy講座でシェアするようになってました。</p>
+                    <p>ゲームをつくったり、電子絵本をつくったり。</p>
+                    <p><span class="highlight">「こんなんでもいいんだ」「これなら私にもできそう」</span><br>
+                    そんなふうに感じてもらえるような、肩の力が抜けたコンテンツを目指しています。</p>
+                    <p>完璧じゃなくていい。素直じゃなくてもいい。<br>
+                    <span class="highlight">"ちょっとひねくれた面白さ"</span>が、私の得意分野です。</p>
+                    <p>平日出勤前にstand.fmで日々の出来事を配信しています<br>
+                    『こじらせつるのせきららラジオ』<br>
+                    <a href="https://stand.fm/channels/64147d8dc881d58fc5d89027" target="_blank" style="color: #ef5587;">https://stand.fm/channels/64147d8dc881d58fc5d89027</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="works" class="works">
+            <h2 class="section-title">Works</h2>
+            
+            <div class="works-category">
+                <h3>Udemy</h3>
+                <p style="text-align: center; margin-bottom: 1rem; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">AIを活用したコンテンツ作成の方法などをUdemy講座にしています</p>
+                <p style="text-align: center; margin-bottom: 2rem; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); font-size: 0.9em;">たまに割引クーポンを発行することがあります。クーポン情報はＸでお知らせしています。</p>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <img src="images/novelgame.jpg" alt="ビジュアルノベルゲーム制作講座" class="work-image">
+                        <h4>バイブコーディングで実践！プログラミング知識ゼロでつくるビジュアルノベルゲーム制作講座</h4>
+                        <a href="https://www.udemy.com/course/novelgeme/?referralCode=700ABDDAD5172070B0DE" target="_blank">詳細を見る</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/canvamovie.png" alt="Canva動画作成講座" class="work-image">
+                        <h4>【初心者向】Canvaでつくる！はじめての ＰＲ動画作成講座</h4>
+                        <a href="https://www.udemy.com/course/canva-douga/?referralCode=306A2AE06252D8257501" target="_blank">詳細を見る</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/stamp.png" alt="スタンプ画像作成講座" class="work-image">
+                        <h4>ChatGPTで思い通りのスタンプ画像作成！LINE/Discord対応 オリジナル画像生成講座</h4>
+                        <a href="https://www.udemy.com/course/chatgptlinediscord/?referralCode=F4408B91D19F235ADDF7" target="_blank">詳細を見る</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/home.png" alt="子どもの自己肯定感講座" class="work-image">
+                        <h4>褒め下手でも大丈夫！ChatGPTで子どもの自己肯定感＆自己効力感を育むAI活用講座</h4>
+                        <a href="https://www.udemy.com/course/homekotoba/?referralCode=83AB1E2BE0B3C6BC718C" target="_blank">詳細を見る</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/ehon.png" alt="電子絵本作成講座" class="work-image">
+                        <h4>子どもの未来を創る電子絵本作成講座</h4>
+                        <a href="https://www.udemy.com/course/denshiehon/?referralCode=46A361753BE3BC3B885C" target="_blank">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="works-category">
+                <h3>ミニゲーム</h3>
+                <p style="text-align: center; margin-bottom: 2rem; color: white; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">バイブコ―ディングでミニゲームを作っています<br>無料で遊べるのでよかったらやってみてください</p>
+                <div class="works-grid">
+                    <div class="work-item">
+                        <img src="images/tramul.jpg" alt="とらむる" class="work-image">
+                        <h4>恋愛趣味レーションゲーム<br>『とらむる』</h4>
+                        <a href="https://turu00260026.github.io/tramul-game/" target="_blank">ゲームで遊ぶ</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/magicalshooting.png" alt="Magical shooting" class="work-image">
+                        <h4>シューティングゲーム<br>『Magical shooting』</h4>
+                        <a href="https://turu00260026.github.io/magical_shooting/" target="_blank">ゲームで遊ぶ</a>
+                    </div>
+                    <div class="work-item">
+                        <img src="images/AI labolutions blocks.png" alt="AIラボリューションズ ブロックス" class="work-image">
+                        <h4>ブロック落としゲーム<br><span style="font-size: 0.9em;">『AIラボリューションズ ブロックス』</span></h4>
+                        <a href="https://turu00260026.github.io/block_game/" target="_blank">ゲームで遊ぶ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>何かありましたら<a href="https://twitter.com/turu00260026" target="_blank">X（@turu00260026）</a>のDMにてご連絡ください</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 つる. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // スムーススクロール機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // スクロール時のヘッダー効果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(38, 130, 252, 0.95)';
+            } else {
+                header.style.backgroundColor = '#2682fc';
+            }
+        });
+
+        // 要素のフェードイン効果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // 観察対象の要素を設定
+        document.querySelectorAll('.work-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
