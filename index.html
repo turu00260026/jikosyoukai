@@ -177,6 +177,14 @@
             transform: translateY(-2px);
         }
 
+        .mobile-text {
+            display: none;
+        }
+
+        .desktop-text {
+            display: block;
+        }
+
         /* WORKSセクション */
         .works {
             background-color: #559eff;
@@ -318,6 +326,14 @@
                 padding: 2rem 1rem;
             }
 
+            .mobile-text {
+                display: block;
+            }
+
+            .desktop-text {
+                display: none;
+            }
+
             .profile-image {
                 width: 200px;
                 height: 200px;
@@ -350,6 +366,14 @@
             .about {
                 margin: 1rem 0.25rem;
                 padding: 1.5rem 0.5rem;
+            }
+
+            .mobile-text {
+                display: block;
+            }
+
+            .desktop-text {
+                display: none;
             }
 
             .profile-image {
@@ -416,19 +440,46 @@
                 <div class="profile-info">
                     <h3>つる</h3>
                     <p class="title">AIで遊ぶちょっとひねくれもの</p>
-                    <p>こんにちは、つるです。</p>
-                    <p>「書くのも描くのも苦手だし、なにが得意ってわけでもないけど──<br>
+                    <p class="profile-text desktop-text">こんにちは、つるです。</p>
+                    <p class="profile-text desktop-text">「書くのも描くのも苦手だし、なにが得意ってわけでもないけど──<br>
                     AIでちょっと遊んでみたら、なんか…作れちゃった。」</p>
-                    <p>そんな"できちゃった感"からはじまった私の表現活動。</p>
-                    <p>生成AIでおもしろいと思えるものを気ままに作って、<br>
+                    <p class="profile-text desktop-text">そんな"できちゃった感"からはじまった私の表現活動。</p>
+                    <p class="profile-text desktop-text">生成AIでおもしろいと思えるものを気ままに作って、<br>
                     気がつけばその作り方までUdemy講座でシェアするようになってました。</p>
-                    <p>ゲームをつくったり、電子絵本をつくったり。</p>
-                    <p><span class="highlight">「こんなんでもいいんだ」「これなら私にもできそう」</span><br>
+                    <p class="profile-text desktop-text">ゲームをつくったり、電子絵本をつくったり。</p>
+                    <p class="profile-text desktop-text"><span class="highlight">「こんなんでもいいんだ」「これなら私にもできそう」</span><br>
                     そんなふうに感じてもらえるような、肩の力が抜けたコンテンツを目指しています。</p>
-                    <p>完璧じゃなくていい。素直じゃなくてもいい。<br>
+                    <p class="profile-text desktop-text">完璧じゃなくていい。素直じゃなくてもいい。<br>
                     <span class="highlight">"ちょっとひねくれた面白さ"</span>が、私の得意分野です。</p>
-                    <p>平日出勤前にstand.fmで日々の出来事を配信しています<br>
+                    <p class="profile-text desktop-text">平日出勤前にstand.fmで日々の出来事を配信しています<br>
                     『こじらせつるのせきららラジオ』</p>
+                    
+                    <div class="mobile-text">
+                        <p>こんにちは、つるです</p>
+                        <p>「書くのも描くのも苦手だし、<br>
+                        なにが得意ってわけでもないけど──<br>
+                        AIでちょっと遊んでみたら、<br>
+                        なんか…作れちゃった」</p>
+                        <p>そんな"できちゃった感"<br>
+                        からはじまった私の表現活動</p>
+                        <p>生成AIでおもしろいと思えるものを<br>
+                        気ままに作って、<br>
+                        気がつけばその作り方まで<br>
+                        Udemy講座でシェアするようになってました</p>
+                        <p>ゲームをつくったり、電子絵本をつくったり</p>
+                        <p><span class="highlight">「こんなんでもいいんだ」<br>
+                        「これなら私にもできそう」</span><br>
+                        そんなふうに感じてもらえるような、<br>
+                        肩の力が抜けたコンテンツを目指しています</p>
+                        <p>完璧じゃなくていい<br>
+                        素直じゃなくてもいい。<br>
+                        <span class="highlight">"ちょっとひねくれた面白さ"が<br>
+                        私の得意分野です</span></p>
+                        <p>平日出勤前にstand.fmで<br>
+                        日々の出来事を配信しています<br>
+                        『こじらせつるのせきららラジオ』</p>
+                    </div>
+                    
                     <a href="https://stand.fm/channels/64147d8dc881d58fc5d89027" target="_blank" class="radio-button" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background-color: #ef5587; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(239, 85, 135, 0.3);">📻 ラジオを聴く</a>
                 </div>
             </div>
