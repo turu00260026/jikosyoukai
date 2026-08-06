@@ -160,25 +160,26 @@ img{max-width:100%;display:block}
 /* ============ WORKS ============ */
 .flagship{display:grid;gap:clamp(16px,2.4vw,26px);grid-template-columns:repeat(auto-fit,minmax(310px,1fr))}
 .big{
-  position:relative;overflow:hidden;border-radius:22px;border:1px solid var(--line-hi);
-  min-height:clamp(300px,42vw,410px);display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(22px,3vw,36px);isolation:isolate;
-  transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .45s;
+  position:relative;display:flex;flex-direction:column;overflow:hidden;
+  border-radius:22px;border:1px solid var(--line-hi);background:var(--ink-2);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .45s,background .45s;
 }
-.big::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--panel)}
-.big .shot{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.5;transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .45s}
-.big::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(200deg,rgba(11,13,18,.15),rgba(11,13,18,.9) 68%)}
-.big:hover{transform:translateY(-6px);border-color:var(--acid)}
-.big:hover .shot{transform:scale(1.07);opacity:.62}
-.big-tag{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--acid);margin-bottom:14px}
-.big h3{font-family:var(--display);font-weight:var(--display-weight);letter-spacing:var(--display-spacing);font-size:clamp(1.45rem,3.4vw,2.25rem);line-height:1.25}
-.big p{margin-top:12px;color:#c4c8d2;font-size:.92rem;max-width:34ch}
+.big:hover{transform:translateY(-6px);border-color:var(--acid);background:var(--panel)}
+.big .plate{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0e1118;border-bottom:1px solid var(--line)}
+.big .shot{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.big:hover .shot{transform:scale(1.05)}
+.big-body{padding:clamp(19px,2.6vw,28px);display:flex;flex-direction:column;gap:11px;flex:1}
+.big-tag{font-family:var(--mono);font-size:10px;letter-spacing:.24em;color:var(--acid)}
+.big h3{font-family:var(--display);font-weight:var(--display-weight);letter-spacing:var(--display-spacing);font-size:clamp(1.35rem,3vw,1.95rem);line-height:1.3}
+.big p{color:#c4c8d2;font-size:.9rem}
 .big .go{
-  margin-top:22px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
-  padding:12px 24px;border-radius:999px;background:var(--paper);color:var(--ink);
-  font-weight:700;font-size:.86rem;transition:gap .3s,background .3s;
+  margin-top:auto;padding-top:4px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-weight:700;font-size:.88rem;color:var(--paper);
 }
-.big:hover .go{gap:16px;background:var(--acid)}
+.big .go::after{content:"";width:0;height:1px;background:var(--acid);transition:width .35s}
+.big:hover .go{color:var(--acid)}
+.big:hover .go::after{width:26px}
+.big .stretch{position:absolute;inset:0;z-index:3}
 
 .cat{margin-top:clamp(52px,8vw,86px)}
 .cat-label{
@@ -396,28 +397,34 @@ img{max-width:100%;display:block}
       <!-- 大作 -->
       <div class="flagship">
         <article class="big reveal">
-          <img class="shot" src="https://turu00260026.github.io/raml-vs-gadget/assets/promos/raml_vs_gadget_pr_16x9_v2.jpg" alt="" loading="lazy">
+        <div class="plate"><img class="shot" src="https://turu00260026.github.io/raml-vs-gadget/assets/promos/raml_vs_gadget_pr_16x9_v2.jpg" alt="" loading="lazy"></div>
+        <div class="big-body">
           <p class="big-tag">ADVENTURE / 全4章<span class="date">2026.07</span></p>
           <h3>RAML vs GADGET</h3>
           <p>自由か、秩序か。暴走した自動化を止めに行く。壊して止めるか、掌握して止めるか、話して止めるか——選び方が、結末を決める。</p>
           <a class="go" href="https://turu00260026.github.io/raml-vs-gadget/" target="_blank" rel="noopener">はじめる →</a>
+        </div>
         </article>
 
         <article class="big reveal">
-          <img class="shot" src="images/after_hours.jpg" alt="" loading="lazy">
+        <div class="plate"><img class="shot" src="images/after_hours.jpg" alt="" loading="lazy"></div>
+        <div class="big-body">
           <p class="big-tag">RPG風ADV / 全14日・8つの結末<span class="date">2026.07</span></p>
           <h3>RAML After Hours</h3>
           <p>世界の法則が書き換わる夜も、保育園からの電話には出なければならない。世界征服は、定時後に始まる。</p>
           <a class="go" href="https://turu00260026.github.io/raml-after-hours/" target="_blank" rel="noopener">はじめる →</a>
+        </div>
         </article>
 
         <article class="big reveal">
-        <img class="shot" src="images/koga_castle.jpg" alt="" loading="lazy">
+        <div class="plate"><img class="shot" src="images/koga_castle.jpg" alt="" loading="lazy"></div>
+        <div class="big-body">
         <p class="big-tag">ミニゲーム集 / 八つの試練<span class="date">2026.08</span></p>
         <h3>ぬしと甲賀城の八試練</h3>
         <p>AIらぼの「ぬし」が、親友リコを救うため甲賀の城へ。八つの遊戯試練にいどむ、勘違い救出ミニゲーム集。</p>
           <p class="model">CryptoNinja（二次創作が認められている、日本のNFTキャラクター作品）の<b>非公式</b>ファンゲームです。AIらぼの「ぬし」とりこさんも登場します。</p>
         <a class="go" href="https://turu00260026.github.io/NUSHInoKOUGAJO8SHIREN/" target="_blank" rel="noopener">はじめる →</a>
+        </div>
       </article>
       </div>
 
