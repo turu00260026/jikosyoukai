@@ -195,12 +195,16 @@ img{max-width:100%;display:block}
 .big h3{font-family:var(--display);font-weight:var(--display-weight);letter-spacing:var(--display-spacing);font-size:clamp(1.35rem,3vw,1.95rem);line-height:1.3}
 .big p{color:#c4c8d2;font-size:.9rem}
 .big .go{
-  margin-top:auto;padding-top:4px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
-  font-weight:700;font-size:.88rem;color:var(--paper);
+  margin-top:auto;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  padding:13px 28px;border-radius:999px;
+  background:var(--acid);color:#0b0d12;
+  font-weight:900;font-size:.95rem;letter-spacing:.02em;
+  box-shadow:0 4px 14px rgba(232,255,58,.16);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s,background .3s;
 }
-.big .go::after{content:"";width:0;height:1px;background:var(--acid);transition:width .35s}
-.big:hover .go{color:var(--acid)}
-.big:hover .go::after{width:26px}
+.big .go::after{content:"▶";font-size:.72em;transition:transform .3s}
+.big .go:hover,.big:hover .go{transform:translateY(-2px);box-shadow:0 10px 26px rgba(232,255,58,.34)}
+.big:hover .go::after{transform:translateX(3px)}
 .big .stretch{position:absolute;inset:0;z-index:3}
 
 .cat{margin-top:clamp(52px,8vw,86px)}
@@ -234,11 +238,16 @@ img{max-width:100%;display:block}
 .card h4{font-family:var(--display);font-weight:var(--display-weight);letter-spacing:var(--display-spacing);font-size:1.02rem;line-height:1.45}
 .card p{color:var(--dim);font-size:.8rem;line-height:1.7;flex:1}
 .card .play{
-  margin-top:6px;display:inline-flex;align-items:center;gap:7px;
-  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--paper);
+  margin-top:10px;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:999px;
+  background:var(--acid);color:#0b0d12;
+  font-family:var(--mono);font-size:11px;font-weight:900;letter-spacing:.14em;
+  box-shadow:0 3px 10px rgba(232,255,58,.14);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s;
 }
-.card .play::after{content:"→";transition:transform .3s}
-.card:hover .play::after{transform:translateX(5px)}
+.card .play::after{content:"▶";font-size:.8em;transition:transform .3s}
+.card:hover .play{transform:translateY(-1px);box-shadow:0 8px 20px rgba(232,255,58,.3)}
+.card:hover .play::after{transform:translateX(3px)}
 .card .stretch{position:absolute;inset:0;z-index:3}
 /* 通し番号 */
 .thumb .no{
@@ -338,8 +347,8 @@ img{max-width:100%;display:block}
 <header class="bar">
   <a href="#top" class="bar-mark"><i></i><span>つる / TURU</span></a>
   <nav>
-    <a href="#about">ABOUT</a>
     <a href="#contents">CONTENTS</a>
+    <a href="#about">ABOUT</a>
     <a href="#radio">RADIO</a>
     <a href="#contact">CONTACT</a>
   </nav>
@@ -372,44 +381,12 @@ img{max-width:100%;display:block}
     </div>
   </section>
 
-  <!-- ================= ABOUT ================= -->
-  <section class="sec about" id="about">
-    <div class="sec-inner">
-      <div class="sec-head reveal">
-        <div>
-          <p class="sec-num">01 — ABOUT</p>
-          <h2 class="sec-title">つくってる人</h2>
-        </div>
-        <p class="sec-note">完璧じゃなくていい。素直じゃなくてもいい。</p>
-      </div>
-
-      <div class="about-wrap">
-        <div class="face reveal"><img src="images/jibun.jpg" alt="つる"></div>
-        <div class="reveal">
-          <h3 class="about-name">つる</h3>
-          <p class="about-role">AI で 遊 ぶ ち ょ っ と ひ ね く れ も の</p>
-          <div class="about-body">
-            <p>「書くのも描くのも苦手だし、なにが得意ってわけでもないけど──AIでちょっと遊んでみたら、なんか…作れちゃった。」</p>
-            <p>そんな<em>"できちゃった感"</em>からはじまった表現活動です。生成AIでおもしろいと思えるものを、気ままに作っています。ゲームをつくったり、電子絵本をつくったり。</p>
-            <p>目指しているのは、肩の力が抜けたコンテンツ。<em>"ちょっとひねくれた面白さ"</em>が得意分野です。</p>
-            <p>AIの勉強のために、りこさんが主宰するAIのオンラインサロン<em>「AIらぼ」</em>に参加しています。ゲームに出てくるキャラクターの多くは、そこで出会った仲間たちがモデルです。れんとん、けいすけ、ショウ——本人の面影をお借りして、そのまま主役にしています。</p>
-          </div>
-          <p class="pull">「こんなんでもいいんだ」<br>「これなら私にもできそう」</p>
-          <div class="about-links">
-            <a class="chip" href="https://stand.fm/channels/64147d8dc881d58fc5d89027" target="_blank" rel="noopener">📻 こじらせつるのせきららラジオ</a>
-            <a class="chip" href="https://x.com/turu00260026" target="_blank" rel="noopener">𝕏 @turu00260026</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ================= CONTENTS ================= -->
   <section class="sec" id="contents">
     <div class="sec-inner">
       <div class="sec-head reveal">
         <div>
-          <p class="sec-num">02 — CONTENTS</p>
+          <p class="sec-num">01 — CONTENTS</p>
           <h2 class="sec-title">遊べるもの、ぜんぶ</h2>
         </div>
         <p class="sec-note">ブラウザで開くだけ。インストールも登録もいりません。</p>
@@ -425,7 +402,7 @@ img{max-width:100%;display:block}
           <h3>経理の魔王様</h3>
           <p>魔王城に勇者ご一行がやってきます。決戦ではなく、精算に。宿代、消耗品、ドラゴン討伐費——伝票の品目と金額を読んで、承認するか差し戻すかを決める読み物ゲーム。決め台詞は「差し戻し！」。</p>
           <p class="model">副題「勇者ご一行、精算に参りました」。台詞528行、絵も音楽もAIと一緒に全部自作のオリジナル作品です。</p>
-          <a class="go" href="https://turu00260026.github.io/keirinomaousama/" target="_blank" rel="noopener">はじめる →</a>
+          <a class="go" href="https://turu00260026.github.io/keirinomaousama/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
         <article class="big reveal">
@@ -435,7 +412,7 @@ img{max-width:100%;display:block}
           <h3>名もなき僕と破滅の君</h3>
           <p>断罪される悪役令嬢と、大団円のあとで壊れる聖女。その結末を知る記録室の書記官が、剣ではなく書類と記録と証言で運命を書き換えにいく。主人公の名前は、最後まで一度も呼ばれない。</p>
           <p class="model">本文9.3万字・280場面。立ち絵・背景・CG・BGMまで<b>すべて自作</b>のオリジナル作品です。</p>
-          <a class="go" href="https://turu00260026.github.io/namonaki/" target="_blank" rel="noopener">はじめる →</a>
+          <a class="go" href="https://turu00260026.github.io/namonaki/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
         <article class="big reveal">
@@ -445,7 +422,7 @@ img{max-width:100%;display:block}
           <h3>れんとんキッチン</h3>
           <p>20品から5品えらんで、食材・調理法・手順・調味料をあてる。うまくいけばホームパーティー大成功、失敗するとトンデモ料理が食卓に。</p>
           <p class="model">モデル：れんとんさん</p>
-          <a class="go" href="https://turu00260026.github.io/r_kitchen/" target="_blank" rel="noopener">はじめる →</a>
+          <a class="go" href="https://turu00260026.github.io/r_kitchen/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
         <article class="big reveal">
@@ -455,7 +432,7 @@ img{max-width:100%;display:block}
         <h3>ぬしと甲賀城の八試練</h3>
         <p>AIらぼの「ぬし」が、親友リコを救うため甲賀の城へ。八つの遊戯試練にいどむ、勘違い救出ミニゲーム集。</p>
           <p class="model">CryptoNinja（二次創作が認められている、日本のNFTキャラクター作品）の<b>非公式</b>ファンゲームです。AIらぼの「ぬし」とりこさんも登場します。</p>
-        <a class="go" href="https://turu00260026.github.io/NUSHInoKOUGAJO8SHIREN/" target="_blank" rel="noopener">はじめる →</a>
+        <a class="go" href="https://turu00260026.github.io/NUSHInoKOUGAJO8SHIREN/" target="_blank" rel="noopener">はじめる</a>
         </div>
       </article>
       </div>
@@ -615,6 +592,38 @@ img{max-width:100%;display:block}
             </div>
             <a class="stretch" href="https://turu00260026.github.io/sugoroku/" target="_blank" rel="noopener" aria-label="運命のルーレットで遊ぶ"></a>
           </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="sec about" id="about">
+    <div class="sec-inner">
+      <div class="sec-head reveal">
+        <div>
+          <p class="sec-num">02 — ABOUT</p>
+          <h2 class="sec-title">つくってる人</h2>
+        </div>
+        <p class="sec-note">完璧じゃなくていい。素直じゃなくてもいい。</p>
+      </div>
+
+      <div class="about-wrap">
+        <div class="face reveal"><img src="images/jibun.jpg" alt="つる"></div>
+        <div class="reveal">
+          <h3 class="about-name">つる</h3>
+          <p class="about-role">AI で 遊 ぶ ち ょ っ と ひ ね く れ も の</p>
+          <div class="about-body">
+            <p>「書くのも描くのも苦手だし、なにが得意ってわけでもないけど──AIでちょっと遊んでみたら、なんか…作れちゃった。」</p>
+            <p>そんな<em>"できちゃった感"</em>からはじまった表現活動です。生成AIでおもしろいと思えるものを、気ままに作っています。ゲームをつくったり、電子絵本をつくったり。</p>
+            <p>目指しているのは、肩の力が抜けたコンテンツ。<em>"ちょっとひねくれた面白さ"</em>が得意分野です。</p>
+            <p>AIの勉強のために、りこさんが主宰するAIのオンラインサロン<em>「AIらぼ」</em>に参加しています。ゲームに出てくるキャラクターの多くは、そこで出会った仲間たちがモデルです。れんとん、けいすけ、ショウ——本人の面影をお借りして、そのまま主役にしています。</p>
+          </div>
+          <p class="pull">「こんなんでもいいんだ」<br>「これなら私にもできそう」</p>
+          <div class="about-links">
+            <a class="chip" href="https://stand.fm/channels/64147d8dc881d58fc5d89027" target="_blank" rel="noopener">📻 こじらせつるのせきららラジオ</a>
+            <a class="chip" href="https://x.com/turu00260026" target="_blank" rel="noopener">𝕏 @turu00260026</a>
+          </div>
         </div>
       </div>
     </div>
