@@ -360,6 +360,51 @@ img{max-width:100%;display:block}
 }
 .foot a:hover{color:var(--paper)}
 
+/* ============ ゲーム別レビュー（API: game-reviews Worker） ============ */
+.rv{position:relative;z-index:5;margin-top:4px;align-self:stretch;border-top:1px solid var(--line);padding-top:10px;cursor:auto}
+.rv-head{
+  width:100%;display:flex;align-items:center;gap:8px;background:none;border:0;padding:6px 0;
+  color:var(--paper);font-family:var(--mono);font-size:12px;letter-spacing:.06em;cursor:pointer;text-align:left;
+}
+.rv-stars{color:var(--acid);letter-spacing:.08em;font-size:13px}
+.rv-stars .off{color:rgba(255,255,255,.18)}
+.rv-avg{font-weight:900}
+.rv-cnt{color:var(--dim)}
+.rv-open{margin-left:auto;color:var(--dim);font-size:10.5px;letter-spacing:.14em}
+.rv-open::after{content:" ▾";display:inline-block;transition:transform .25s}
+.rv.open .rv-open::after{transform:rotate(180deg)}
+.rv-panel{padding:6px 0 2px;display:flex;flex-direction:column;gap:12px}
+.rv-panel[hidden]{display:none}
+.rv-list{list-style:none;display:flex;flex-direction:column;gap:8px;max-height:220px;overflow:auto;margin:0;padding:0}
+.rv-list:empty{display:none}
+.rv-list li{background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.78rem;line-height:1.65;color:var(--paper);word-break:break-word;white-space:pre-wrap}
+.rv-list li small{display:block;color:var(--dim);font-family:var(--mono);font-size:10px;letter-spacing:.08em;margin-bottom:2px}
+.rv-list li small b{color:var(--acid);font-weight:400}
+.rv .rv-empty{color:var(--dim);font-size:.75rem;flex:none}
+.rv-empty[hidden]{display:none}
+.rv-form{display:flex;flex-direction:column;gap:8px}
+.rv-form .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.19em;color:var(--acid)}
+.rv-pick{display:flex;gap:2px}
+.rv-pick button{background:none;border:0;padding:2px 3px;font-size:26px;line-height:1;color:rgba(255,255,255,.2);cursor:pointer;transition:transform .15s,color .15s}
+.rv-pick button.on{color:var(--acid)}
+.rv-pick button:active{transform:scale(.88)}
+.rv-form textarea{
+  width:100%;min-height:64px;resize:vertical;border-radius:10px;border:1px solid var(--line-hi);box-sizing:border-box;
+  background:var(--ink);color:var(--paper);padding:8px 10px;font:inherit;font-size:.82rem;line-height:1.6;
+}
+.rv-form textarea:focus{outline:none;border-color:var(--acid)}
+.rv-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+.rv-row{display:flex;align-items:center;gap:10px}
+.rv-len{color:var(--dim);font-family:var(--mono);font-size:10px;margin-left:auto}
+.rv-send{
+  padding:9px 18px;border-radius:999px;border:1px solid var(--acid);background:transparent;color:var(--acid);
+  font-family:var(--mono);font-size:11px;font-weight:900;letter-spacing:.14em;cursor:pointer;
+}
+.rv-send:disabled{opacity:.35;cursor:default}
+.rv .rv-msg{font-size:.75rem;color:var(--dim);line-height:1.6;flex:none}
+.rv .rv-msg.ok{color:var(--acid)}.rv .rv-msg.ng{color:var(--magenta)}
+.rv-msg[hidden]{display:none}
+
 @media(max-width:860px){
   .about-wrap{grid-template-columns:1fr}
   .face{max-width:230px}
@@ -427,7 +472,7 @@ img{max-width:100%;display:block}
 
       <!-- 大作 -->
       <div class="flagship">
-        <article class="big reveal">
+        <article class="big reveal" data-review-id="F-keiri">
           <div class="plate"><img class="shot" src="images/keirinomaousama.jpg" alt="" loading="lazy"></div>
           <div class="big-body">
           <p class="big-tag"><b class="new">NEW</b>経費精算アドベンチャー / 伝票5枚<span class="date">2026.09</span></p>
@@ -437,7 +482,7 @@ img{max-width:100%;display:block}
           <a class="go" href="https://turu00260026.github.io/keirinomaousama/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
-        <article class="big reveal">
+        <article class="big reveal" data-review-id="F-namonaki">
           <div class="plate"><img class="shot" src="images/namonaki.jpg" alt="" loading="lazy"></div>
           <div class="big-body">
           <p class="big-tag">ノベルゲーム / 7つの結末<span class="date">2026.08</span></p>
@@ -447,7 +492,7 @@ img{max-width:100%;display:block}
           <a class="go" href="https://turu00260026.github.io/namonaki/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
-        <article class="big reveal">
+        <article class="big reveal" data-review-id="F-kitchen">
           <div class="plate"><img class="shot" src="images/r_kitchen.jpg" alt="" loading="lazy"></div>
           <div class="big-body">
           <p class="big-tag">料理ゲーム / 全20品<span class="date">2026.08</span></p>
@@ -457,7 +502,7 @@ img{max-width:100%;display:block}
           <a class="go" href="https://turu00260026.github.io/r_kitchen/" target="_blank" rel="noopener">はじめる</a>
         </div>
         </article>
-        <article class="big reveal">
+        <article class="big reveal" data-review-id="F-nushi">
         <div class="plate"><img class="shot" src="images/koga_castle.jpg" alt="" loading="lazy"></div>
         <div class="big-body">
         <p class="big-tag">ミニゲーム集 / 八つの試練<span class="date">2026.08</span></p>
@@ -761,6 +806,124 @@ img{max-width:100%;display:block}
     });
   }, { rootMargin: "0px 0px -12% 0px", threshold: 0.08 });
   items.forEach((el) => io.observe(el));
+})();
+
+// ============ ゲーム別レビュー ============
+// APIのURLはここ1か所。本番化のとき Worker のURL（https://game-reviews.<サブドメイン>.workers.dev）に差し替える
+const REVIEW_API = "https://game-reviews.turu00260026.workers.dev";
+(() => {
+  // 対象: 番号付きカード（IDはカード番号 A-06 など）＋大作枠（IDは data-review-id）
+  const idOf = (c) => c.dataset.reviewId || (c.querySelector(".thumb .no") || {}).textContent?.trim() || "";
+  const cards = [...document.querySelectorAll("article.card, article.big")].filter((c) => idOf(c));
+  if (!cards.length) return;
+  const KEY = "jikosyoukai_review_v1";
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { return {}; } };
+  const save = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch {} };
+  const esc = (t) => String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const stars = (v) => { const n = Math.round(v || 0); return "★".repeat(n) + '<span class="off">' + "★".repeat(5 - n) + "</span>"; };
+  const today = () => new Date().toDateString();
+  const ERR = {
+    already_posted: "このゲームへの投稿は1日1回までです。また明日どうぞ。",
+    too_long: "コメントは200字までです。",
+    bad_rating: "★を選んでください。",
+  };
+  const FAIL = "送信できませんでした。時間をおいてもう一度どうぞ。";
+
+  function head(box, g) {
+    box.querySelector(".rv-stars").innerHTML = stars(g.avg);
+    box.querySelector(".rv-avg").textContent = g.count ? Number(g.avg).toFixed(1) : "—";
+    box.querySelector(".rv-cnt").textContent = "(" + (g.count || 0) + ")";
+  }
+  function list(box, g) {
+    const cs = g.comments || [];
+    box.querySelector(".rv-list").innerHTML = cs
+      .map((c) => "<li><small><b>" + "★".repeat(c.rating) + "</b> " + esc(c.date) + "</small>" + esc(c.comment) + "</li>")
+      .join("");
+    box.querySelector(".rv-empty").hidden = cs.length > 0;
+  }
+
+  function build(card, id) {
+    const box = document.createElement("div");
+    box.className = "rv";
+    box.innerHTML =
+      '<button type="button" class="rv-head" aria-expanded="false"><span class="rv-stars"></span><span class="rv-avg">—</span><span class="rv-cnt">(0)</span><span class="rv-open">REVIEW</span></button>' +
+      '<div class="rv-panel" hidden>' +
+        '<ul class="rv-list"></ul><p class="rv-empty">まだコメントはありません。</p>' +
+        '<form class="rv-form" novalidate>' +
+          '<span class="lbl">RATE THIS GAME</span>' +
+          '<div class="rv-pick" role="radiogroup" aria-label="評価">' +
+            [1, 2, 3, 4, 5].map((n) => '<button type="button" data-v="' + n + '" aria-label="★' + n + '">★</button>').join("") +
+          "</div>" +
+          '<textarea maxlength="200" placeholder="ひとこと（任意・200字まで。確認後に表示されます）"></textarea>' +
+          '<input class="rv-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">' +
+          '<div class="rv-row"><button type="submit" class="rv-send" disabled>投稿する</button><span class="rv-len">0/200</span></div>' +
+          '<p class="rv-msg" hidden></p>' +
+        "</form>" +
+      "</div>";
+    card.querySelector(".card-body, .big-body").appendChild(box);
+
+    const btn = box.querySelector(".rv-head"), panel = box.querySelector(".rv-panel");
+    const form = box.querySelector(".rv-form"), ta = form.querySelector("textarea");
+    const send = form.querySelector(".rv-send"), msg = form.querySelector(".rv-msg"), len = form.querySelector(".rv-len");
+    let rating = 0;
+    const say = (t, cls) => { msg.hidden = false; msg.className = "rv-msg " + (cls || ""); msg.textContent = t; };
+    const lock = () => form.querySelectorAll("button,textarea").forEach((x) => (x.disabled = true));
+
+    btn.addEventListener("click", () => {
+      const open = panel.hidden;
+      panel.hidden = !open;
+      box.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", String(open));
+    });
+    form.querySelectorAll(".rv-pick button").forEach((b) => b.addEventListener("click", () => {
+      rating = +b.dataset.v;
+      form.querySelectorAll(".rv-pick button").forEach((x) => x.classList.toggle("on", +x.dataset.v <= rating));
+      send.disabled = false;
+    }));
+    ta.addEventListener("input", () => { len.textContent = [...ta.value].length + "/200"; });
+
+    const done = load()[id];
+    if (done && done.day === today()) { say("投稿ありがとうございました。", "ok"); lock(); }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!rating) return say(ERR.bad_rating, "ng");
+      send.disabled = true;
+      try {
+        const res = await fetch(REVIEW_API + "/api/reviews", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ game_id: id, rating, comment: ta.value, website: form.website.value }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          say(ERR[data.error] || FAIL, "ng");
+          if (data.error === "already_posted") lock(); else send.disabled = false;
+          return;
+        }
+        if (data.count != null) head(box, data);
+        say(data.status === "pending"
+          ? "ありがとうございます！★は反映しました。コメントは確認後に表示されます。"
+          : "ありがとうございます！★を反映しました。", "ok");
+        lock();
+        const o = load(); o[id] = { day: today() }; save(o);
+      } catch { say(FAIL, "ng"); send.disabled = false; }
+    });
+    return box;
+  }
+
+  fetch(REVIEW_API + "/api/summary")
+    .then((r) => (r.ok ? r.json() : Promise.reject()))
+    .then(({ games }) => {
+      cards.forEach((card) => {
+        const id = idOf(card);
+        const box = build(card, id);
+        const g = games[id] || { avg: 0, count: 0, comments: [] };
+        head(box, g);
+        list(box, g);
+      });
+    })
+    .catch(() => { /* APIに届かないときはレビュー欄ごと出さない（ページは今まで通り） */ });
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7d8a2a0b5caf413baea47c8bbbfd178d"}'></script><!-- End Cloudflare Web Analytics -->
